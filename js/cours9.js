@@ -30,29 +30,24 @@ function affichesujets(articles) {
 function affichesujet(article) {
     var articlesElt = document.getElementById("id");
         
-        var titreElt = document.createElement("h2");
-        var titreEltdate = document.createElement("h2");
-        var titreEltsex = document.createElement("h2");
-        titreElt.textContent = 'identifiant du sujet';
-        var identElt = document.createElement("p");
-        identElt.textContent = article.id;
-        titreEltdate.textContent = 'Date de naissance';
-        var dateElt = document.createElement("p");
-        dateElt.textContent = article.birth_year;
-        titreEltsex.textContent = 'Sex du sujet';
-        var sexElt = document.createElement("p");
-        sexElt.textContent = article.sex;
+        var titreElt = document.createElement("h3");
+        var titreEltdate = document.createElement("h3");
+        var titreEltsex = document.createElement("h3");
+        titreElt.textContent = ('identifiant du sujet : '+article.id);
+        
+        titreEltdate.textContent = ('Date de naissance : '+article.birth_year);
+        
+        titreEltsex.textContent = ('Sex du sujet : '+article.sex);
+        
         var imageElt = document.createElement("img");
-        imageElt.src = "../../images/sujet.jpg";
+        imageElt.src = "../images/sujet.jpg";
         
         articlesElt.appendChild(imageElt);
     
         articlesElt.appendChild(titreElt);
         articlesElt.appendChild(titreEltdate);
         articlesElt.appendChild(titreEltsex);
-        titreElt.appendChild(identElt);
-        titreEltdate.appendChild(dateElt);
-        titreEltsex.appendChild(sexElt);
+       
     return 0;
         
         };
@@ -61,35 +56,31 @@ function affichesujet(article) {
 function affichecenter(article) {
     var articlesElt = document.getElementById("id");
         
-        var titrenom = document.createElement("h2");
-        var titreid = document.createElement("h2");
-        titrenom.textContent = 'Nom du Centre';
-        var nomEltcen = document.createElement("p");
-        nomEltcen.textContent = article.name;
-        titreid.textContent = 'Identifiant du centre';
-        var idEltcen = document.createElement("p");
-        idEltcen.textContent = article.id;
+        var titrenom = document.createElement("h3");
+        var titreid = document.createElement("h3");
+        titrenom.textContent = ('Nom du Centre : '+article.name);
+        
+        titreid.textContent = ('Identifiant du centre : '+article.id);
+       
         var imageElt = document.createElement("img");
-        imageElt.src = "../../images/hopital.jpg";
+        imageElt.src = "../images/hopital.jpg";
         
         articlesElt.appendChild(imageElt);
         
         articlesElt.appendChild(titreid);
         articlesElt.appendChild(titrenom);
-        titreid.appendChild(idEltcen);
-        titrenom.appendChild(nomEltcen);
+    
     return 0;
         
         };
 
 function affichevisit(article) {
-    location.reload();
      var articlesElt = document.getElementById("id");
 
         var titrevisite = document.createElement("h3");
-        titrevisite.textContent = ('Date de la visite: ' +article.when);
+        titrevisite.textContent = ('Date de la visite : ' +article.when.slice(0,10)+'             Heure de la visite : '+article.when.slice(12,-1));
         var idvisite = document.createElement("h3");
-        idvisite.textContent = ('ID de la visite: '+article.id);
+        idvisite.textContent = ('ID de la visite : '+article.id);
 
         articlesElt.appendChild(titrevisite);
         articlesElt.appendChild(idvisite);
@@ -104,28 +95,23 @@ function affichevisit(article) {
 function affichedata(article) {
      var articlesElt = document.getElementById("id");
         
-        var titre_nb1 = document.createElement("h2");
-        titre_nb1.textContent = 'Nombre 1';
-        var nb1 = document.createElement("p");
-        nb1.textContent = article.a_number;
-        var titre_st1 = document.createElement("h2");
-        titre_st1.textContent = 'String 1';
-        var st1 = document.createElement("p");
-        st1.textContent = article.a_string;
-        var titre_nb2 = document.createElement("h2");
-        titre_nb2.textContent = 'Nombre 2';
-        var nb2 = document.createElement("p");
-        nb2.textContent = article.another_number;
-        var titre_st2 = document.createElement("h2");
-        titre_st2.textContent = 'String 2';
-        var st2 = document.createElement("p");
-        st2.textContent = article.another_string;
-        var titre_id = document.createElement("h2");
-        titre_id.textContent = 'Identifiant DATA';
-        var iddata = document.createElement("p");
-        iddata.textContent = article.id;
+        var titre_nb1 = document.createElement("h3");
+        titre_nb1.textContent = ('Nombre 1 : '+article.a_number);
+        
+        var titre_st1 = document.createElement("h3");
+        titre_st1.textContent = ('String 1 : '+article.a_string);
+       
+        var titre_nb2 = document.createElement("h3");
+        titre_nb2.textContent = ('Nombre 2 : '+ article.another_number);
+        
+        var titre_st2 = document.createElement("h3");
+        titre_st2.textContent = ('String 2 : '+article.another_string);
+        
+        var titre_id = document.createElement("h3");
+        titre_id.textContent = ('Identifiant DATA : '+article.id);
+        
         var imageElt = document.createElement("img");
-        imageElt.src = "../../images/data.jpg";
+        imageElt.src = "../images/data.jpg";
         
         articlesElt.appendChild(imageElt);
         
@@ -134,11 +120,7 @@ function affichedata(article) {
         articlesElt.appendChild(titre_st1);
         articlesElt.appendChild(titre_nb2);
         articlesElt.appendChild(titre_st2);
-        titre_nb1.appendChild(nb1);
-        titre_st1.appendChild(st1);
-        titre_nb2.appendChild(nb2);
-        titre_st2.appendChild(st2);
-        titre_id.appendChild(iddata);
+       
     
     
     return 0;
